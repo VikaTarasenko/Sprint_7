@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6525edee-0da2-4265-b661-febb57e185ce" name="Changes" comment="" />
+    <list default="true" id="6525edee-0da2-4265-b661-febb57e185ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/Courier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/CourierAssertions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/CourierClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/CourierGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/Credentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/courier/OrdersGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/courier/CourierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/courier/OrderParamTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/courier/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2IlReWCQfdVjqxvoNsxOAqCWerF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -19,9 +35,65 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Projects/Sprint7/src/test/java"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.OrderTest">
+    <configuration name="CourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="courier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="courier" />
+      <option name="MAIN_CLASS_NAME" value="courier.CourierTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderParamTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="courier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="courier" />
+      <option name="MAIN_CLASS_NAME" value="courier.OrderParamTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint7" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="courier.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="courier" />
+      <option name="MAIN_CLASS_NAME" value="courier.OrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.OrderTest" />
+        <item itemvalue="JUnit.OrderParamTest" />
+        <item itemvalue="JUnit.CourierTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,5 +104,16 @@
       <updated>1670754280151</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
