@@ -1,5 +1,6 @@
 package courier;
 
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
@@ -25,7 +26,8 @@ public class CourierTest {
     }
 
     @Test
-    public void courier() { // создаем курьера
+    @DisplayName("Создание курьера")
+    public void courier() {
         var courier = courierGenerator.random();
         ValidatableResponse creationResponse = client.create(courier);
         check.createdSuccessfully(creationResponse);
@@ -38,7 +40,8 @@ public class CourierTest {
     }
 
     @Test
-    public void loginFails() { // негативный тест на проверку, что пароль не введен
+    @DisplayName("Пароль не введен/заполнено 1 поле")
+    public void loginFails() { // негативный тест на проверку, что пароль не введен, проверка заполнения 1 поля
         var courier = courierGenerator.generic();
         courier.setPassword(null);
         ValidatableResponse loginResponse = client.create(courier);
@@ -47,6 +50,7 @@ public class CourierTest {
     }
 
     @Test
+    @DisplayName("Создание 2х одинаковых куреров")
     public void checkSameCourier() { // проверяем создание 2 одинаковых курьеров
         var courier = courierGenerator.generic();
         ValidatableResponse creationResponse = client.create(courier);
@@ -54,6 +58,7 @@ public class CourierTest {
     }
 
     @Test
+    @DisplayName("Заполнение всех полей")
     public void checkNotFullField() { // проверка на заполнение всех полей
         var courier = new Courier(" ", " ", " ");
         ValidatableResponse creationResponse = client.create(courier);
@@ -61,35 +66,11 @@ public class CourierTest {
     }
 
     @Test
-    public void checkCreds() { // проверка с заполнением 1 поля
-        var courier = courierGenerator.generic();
-        var creds = courier.getLogin();
-        given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri("https://qa-scooter.praktikum-services.ru")
-                .body(creds)
-                .when()
-                .post("/api/v1/courier/login")
-                .then().log().all()
-                .assertThat()
-                .statusCode(400) // приходит 400 код, должен быть 409 и не то сообщение
-                .body("message", equalTo("Unexpected token T in JSON at position 0"));// должно приходить сообщение "Недостаточно данных для входа"
-
-    }
-
-    @Test
-    public void checkNonexistentCreds() { // проверка авторизации под несуществующим пользователем, 2 поля неверные
-        var courier = courierGenerator.random();
-        given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri("https://qa-scooter.praktikum-services.ru")
-                .body(courier)
-                .when()
-                .post("/api/v1/courier/login")
-                .then().log().all()
-                .assertThat()
-                .statusCode(404)
-                .body("message", equalTo("Учетная запись не найдена"));
+    @DisplayName("Авторизация под несуществуюшим пользователем")
+    public void checkNonexistentCred() { // проверка авторизации под несуществующим пользователем, 2 поля неверные
+        var courier = courierGenerator.random(); // генерируем рандомного курьера
+        ValidatableResponse loginResponse = client.login(Credentials.from(courier));
+        check.createdNonexistent(loginResponse);
 
     }
 

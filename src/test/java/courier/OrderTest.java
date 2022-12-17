@@ -1,4 +1,5 @@
 package courier;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import org.junit.Test;
@@ -13,21 +14,11 @@ public class OrderTest {
 
 
     @Test
+    @DisplayName("Список заказов")
     public void order() { // проверка списка заказов
         var order = ordersGenerator.generic();
-        ValidatableResponse creationResponse = client.createOrder(order);
+        ValidatableResponse creationResponse = client.orderList(order);
+       check.createdOrderList(creationResponse);
 
-        given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri("https://qa-scooter.praktikum-services.ru")
-                .body(order)
-                .when()
-                .get("/api/v1/orders")
-                .then().log().all()
-                .assertThat()
-                .statusCode(200)
-                .body("orders", notNullValue())
-                .extract()
-                .path("orders");
     }
 }
